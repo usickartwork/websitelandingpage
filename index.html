@@ -772,6 +772,12 @@
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
+        // ----- Reset Scroll ke Atas saat Refresh -----
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         // ----- Animasi Dua Arah (Scroll Turun & Naik) -----
         const observerOptions = {
             root: null,
@@ -782,10 +788,8 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Ketika elemen masuk layar (Scroll ke bawah maupun ke atas mendekati area)
                     entry.target.classList.add('show');
                 } else {
-                    // Ketika elemen keluar layar, hilangkan class agar saat di-scroll balik bisa animasi lagi
                     entry.target.classList.remove('show');
                 }
             });
