@@ -34,15 +34,15 @@
             padding: 0 24px;
         }
 
-        /* ----- SCROLL ANIMATION SYSTEM (Dua Arah: Bawah & Atas) ----- */
-        .anim-element {
+        /* ----- ANIMASI DUA ARAH (Turun & Naik) ----- */
+        .fade-up-element {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(50px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
-        .anim-element.in-view {
+        .fade-up-element.show {
             opacity: 1;
             transform: translateY(0);
         }
@@ -519,7 +519,7 @@
     <!-- ========== NAVIGATION ========== -->
     <nav>
         <div class="container nav-container">
-            <div class="logo anim-element">
+            <div class="logo fade-up-element">
                 <img src="logo.png" alt="Logo Quick Review" class="logo-img">
                 Quick<span>Review</span>
             </div>
@@ -535,7 +535,7 @@
                 <a href="#affiliate">Affiliate</a>
             </div>
 
-            <div class="nav-cta anim-element">
+            <div class="nav-cta fade-up-element">
                 <a href="#produk" class="btn-primary">Cek Paketnya</a>
             </div>
         </div>
@@ -544,15 +544,15 @@
     <!-- ========== HERO ========== -->
     <section class="hero">
         <div class="container">
-            <h1 class="anim-element">
+            <h1 class="fade-up-element">
                 Modal <span>Rp20.000</span><br />
                 Bisa Cuan <span>10x Lipat</span>
             </h1>
-            <p class="anim-element">
+            <p class="fade-up-element">
                 Cara gampang ubah kartu review Google jadi Rp50–165 ribu ke bisnis lokal di sekitar kamu.
                 Nggak perlu followers, nggak perlu modal gede, nggak perlu jago jualan.
             </p>
-            <div class="btn-group anim-element">
+            <div class="btn-group fade-up-element">
                 <a href="#produk" class="btn-primary">Dapetin Aksesnya</a>
                 <a href="#cara-kerja" class="btn-outline">Lihat Cara Kerjanya</a>
             </div>
@@ -562,14 +562,14 @@
     <!-- ========== PRODUK ========== -->
     <section class="produk" id="produk">
         <div class="container">
-            <div class="section-title anim-element">
+            <div class="section-title fade-up-element">
                 <h2>Pilih Paket Yang Cocok Buat Kamu</h2>
                 <p>Dua pilihan, tinggal sesuai keuntungan kamu berikutnya.</p>
             </div>
 
             <div class="cards-grid">
                 <!-- Produk 1 -->
-                <div class="card anim-element">
+                <div class="card fade-up-element">
                     <img src="produk.png" alt="Akses Reseller" class="card-banner">
                     
                     <div class="card-body">
@@ -593,7 +593,7 @@
                 </div>
 
                 <!-- Produk 2 (Popular) -->
-                <div class="card popular anim-element">
+                <div class="card popular fade-up-element">
                     <span class="badge-popular">Paling Popular</span>
                     <img src="produk2.png" alt="Panduan Lengkap A–Z" class="card-banner">
                     
@@ -625,28 +625,28 @@
     <!-- ========== CARA KERJA ========== -->
     <section class="cara-kerja" id="cara-kerja">
         <div class="container">
-            <div class="section-title anim-element">
+            <div class="section-title fade-up-element">
                 <h2>4 Langkah Dari Nol Sampai Closing Pertama</h2>
                 <p>Cuma 4 langkah ini yang perlu kamu ulang-ulang.</p>
             </div>
 
             <div class="steps-grid">
-                <div class="step anim-element">
+                <div class="step fade-up-element">
                     <div class="step-number">1</div>
                     <h4>Pesan Kartu NFC-nya</h4>
                     <p>Cuma Rp20.000/pcs, langsung dari supplier yang sudah termasuk di paket kamu.</p>
                 </div>
-                <div class="step anim-element">
+                <div class="step fade-up-element">
                     <div class="step-number">2</div>
                     <h4>Samperin Bisnis Lokal</h4>
                     <p>Resto, salon, barbershop, kafe — bisnis yang butuh review Google biar makin dipercaya orang.</p>
                 </div>
-                <div class="step anim-element">
+                <div class="step fade-up-element">
                     <div class="step-number">3</div>
                     <h4>Closing di Tempat</h4>
                     <p>Pakai script obrolan dari panduan, Rp50–165 ribu per kartu tergantung bisnisnya.</p>
                 </div>
-                <div class="step anim-element">
+                <div class="step fade-up-element">
                     <div class="step-number">4</div>
                     <h4>Ulangi & Scale</h4>
                     <p>Satu bisnis puas, kamu akan lebih gampang direkomendasikan ke bisnis lain di sekitarnya.</p>
@@ -658,11 +658,11 @@
     <!-- ========== FAQ ========== -->
     <section class="faq" id="faq">
         <div class="container">
-            <div class="section-title anim-element">
+            <div class="section-title fade-up-element">
                 <h2>Pertanyaan yang Sering Ditanyain</h2>
             </div>
 
-            <div class="faq-list anim-element" id="faqList">
+            <div class="faq-list fade-up-element" id="faqList">
                 <!-- item 1 -->
                 <div class="faq-item">
                     <div class="faq-question">
@@ -772,24 +772,26 @@
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-        // ----- Two-way Scroll Animation (Bawah & Atas) -----
+        // ----- Animasi Dua Arah (Scroll Turun & Naik) -----
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -50px 0px',
-            threshold: 0.15
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.1
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
+                    // Ketika elemen masuk layar (Scroll ke bawah maupun ke atas mendekati area)
+                    entry.target.classList.add('show');
                 } else {
-                    entry.target.classList.remove('in-view');
+                    // Ketika elemen keluar layar, hilangkan class agar saat di-scroll balik bisa animasi lagi
+                    entry.target.classList.remove('show');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.anim-element').forEach(el => {
+        document.querySelectorAll('.fade-up-element').forEach((el) => {
             observer.observe(el);
         });
 
