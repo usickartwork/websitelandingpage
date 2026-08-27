@@ -246,13 +246,15 @@
             box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
         }
 
-        /* Bagian Banner/Gambar Produk di Atas */
+        /* Bagian Banner/Gambar Produk di Atas (Tidak Terpotong) */
         .card-banner {
             width: 100%;
             height: 220px;
-            object-fit: cover;
+            object-fit: contain; /* Mengubah dari cover ke contain agar gambar tampil utuh */
+            background: #0f141a;   /* Memberikan latar belakang rapi jika rasionya berbeda */
             display: block;
             border-bottom: 1px solid #2a3340;
+            padding: 10px;
         }
 
         /* Bagian Konten di Bawah Card */
@@ -702,7 +704,7 @@
                 <!-- item 6 -->
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Kapan aku dapat akses setelah bayar?</span>
+                        <span>Kapan aku dapat akses setelah bayار?</span>
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
