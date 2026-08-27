@@ -6,8 +6,6 @@
     <title>Quick Review – Modal 20K Bisa Cuan 10x Lipat</title>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- AOS CSS for Scroll Animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
         /* ----- RESET & GLOBAL ----- */
         * {
@@ -34,6 +32,19 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* ----- SCROLL ANIMATION SYSTEM (Dua Arah: Bawah & Atas) ----- */
+        .anim-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .anim-element.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ----- BUTTONS (BLUE THEME WITH GLOW) ----- */
@@ -102,7 +113,7 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             color: #ffffff;
-            white-space: nowrap; /* Mencegah teks terpotong */
+            white-space: nowrap;
         }
 
         .logo span {
@@ -111,7 +122,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
-            margin-left: -4px; /* Merapatkan jarak teks Quick dan Review */
+            margin-left: -4px;
         }
 
         .logo-img {
@@ -248,7 +259,7 @@
             box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
         }
 
-        /* Bagian Banner/Gambar Produk Ditinggikan Menjadi 360px */
+        /* Bagian Banner/Gambar Produk */
         .card-banner {
             width: 100%;
             height: 360px;
@@ -508,7 +519,7 @@
     <!-- ========== NAVIGATION ========== -->
     <nav>
         <div class="container nav-container">
-            <div class="logo" data-aos="fade-down" data-aos-duration="800">
+            <div class="logo anim-element">
                 <img src="logo.png" alt="Logo Quick Review" class="logo-img">
                 Quick<span>Review</span>
             </div>
@@ -524,7 +535,7 @@
                 <a href="#affiliate">Affiliate</a>
             </div>
 
-            <div class="nav-cta" data-aos="fade-down" data-aos-duration="800">
+            <div class="nav-cta anim-element">
                 <a href="#produk" class="btn-primary">Cek Paketnya</a>
             </div>
         </div>
@@ -533,15 +544,15 @@
     <!-- ========== HERO ========== -->
     <section class="hero">
         <div class="container">
-            <h1 data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="anim-element">
                 Modal <span>Rp20.000</span><br />
                 Bisa Cuan <span>10x Lipat</span>
             </h1>
-            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <p class="anim-element">
                 Cara gampang ubah kartu review Google jadi Rp50–165 ribu ke bisnis lokal di sekitar kamu.
                 Nggak perlu followers, nggak perlu modal gede, nggak perlu jago jualan.
             </p>
-            <div class="btn-group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="btn-group anim-element">
                 <a href="#produk" class="btn-primary">Dapetin Aksesnya</a>
                 <a href="#cara-kerja" class="btn-outline">Lihat Cara Kerjanya</a>
             </div>
@@ -551,14 +562,14 @@
     <!-- ========== PRODUK ========== -->
     <section class="produk" id="produk">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-title anim-element">
                 <h2>Pilih Paket Yang Cocok Buat Kamu</h2>
                 <p>Dua pilihan, tinggal sesuai keuntungan kamu berikutnya.</p>
             </div>
 
             <div class="cards-grid">
                 <!-- Produk 1 -->
-                <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="card anim-element">
                     <img src="produk.png" alt="Akses Reseller" class="card-banner">
                     
                     <div class="card-body">
@@ -582,7 +593,7 @@
                 </div>
 
                 <!-- Produk 2 (Popular) -->
-                <div class="card popular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="card popular anim-element">
                     <span class="badge-popular">Paling Popular</span>
                     <img src="produk2.png" alt="Panduan Lengkap A–Z" class="card-banner">
                     
@@ -614,28 +625,28 @@
     <!-- ========== CARA KERJA ========== -->
     <section class="cara-kerja" id="cara-kerja">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-title anim-element">
                 <h2>4 Langkah Dari Nol Sampai Closing Pertama</h2>
                 <p>Cuma 4 langkah ini yang perlu kamu ulang-ulang.</p>
             </div>
 
             <div class="steps-grid">
-                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="step anim-element">
                     <div class="step-number">1</div>
                     <h4>Pesan Kartu NFC-nya</h4>
                     <p>Cuma Rp20.000/pcs, langsung dari supplier yang sudah termasuk di paket kamu.</p>
                 </div>
-                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="step anim-element">
                     <div class="step-number">2</div>
                     <h4>Samperin Bisnis Lokal</h4>
                     <p>Resto, salon, barbershop, kafe — bisnis yang butuh review Google biar makin dipercaya orang.</p>
                 </div>
-                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="step anim-element">
                     <div class="step-number">3</div>
                     <h4>Closing di Tempat</h4>
                     <p>Pakai script obrolan dari panduan, Rp50–165 ribu per kartu tergantung bisnisnya.</p>
                 </div>
-                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <div class="step anim-element">
                     <div class="step-number">4</div>
                     <h4>Ulangi & Scale</h4>
                     <p>Satu bisnis puas, kamu akan lebih gampang direkomendasikan ke bisnis lain di sekitarnya.</p>
@@ -647,11 +658,11 @@
     <!-- ========== FAQ ========== -->
     <section class="faq" id="faq">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-title anim-element">
                 <h2>Pertanyaan yang Sering Ditanyain</h2>
             </div>
 
-            <div class="faq-list" id="faqList" data-aos="fade-up" data-aos-duration="800">
+            <div class="faq-list anim-element" id="faqList">
                 <!-- item 1 -->
                 <div class="faq-item">
                     <div class="faq-question">
@@ -759,16 +770,27 @@
         </div>
     </footer>
 
-    <!-- AOS JS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-        // Inisialisasi Library Animasi AOS dengan mirror: true agar animasi berulang saat scroll ke atas/bawah
-        AOS.init({
-            once: false,
-            mirror: true,
-            offset: 80,
+        // ----- Two-way Scroll Animation (Bawah & Atas) -----
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.anim-element').forEach(el => {
+            observer.observe(el);
         });
 
         // ----- Mobile nav toggle -----
