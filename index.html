@@ -92,17 +92,24 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .logo i {
-            -webkit-text-fill-color: #3b82f6;
-            margin-right: 6px;
+
+        /* Styling untuk Logo Gambar */
+        .logo-img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .nav-links {
@@ -445,7 +452,8 @@
     <nav>
         <div class="container nav-container">
             <div class="logo" data-aos="fade-down" data-aos-duration="800">
-                <i class="fas fa-star"></i> Quick Review
+                <img src="logo.jpg" alt="Logo Quick Review" class="logo-img">
+                Quick Review
             </div>
 
             <div class="nav-toggle" id="navToggle">
