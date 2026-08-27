@@ -241,14 +241,17 @@
             margin-bottom: 12px;
         }
 
-        /* Styling Gambar Produk di dalam Card */
+        /* Styling Gambar Produk Menyesuaikan Rasio Asli */
         .card-product-img {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            height: auto;
+            max-height: 350px;
+            object-fit: contain;
             border-radius: 14px;
             margin-bottom: 16px;
+            background: #0f141a;
             border: 1px solid #2a3340;
+            display: block;
         }
 
         .card ul {
@@ -520,7 +523,7 @@
                 <!-- Paket 1 (Product Quick Review Card) -->
                 <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <h3>Product Quick Review Card</h3>
-                    <!-- Gambar Produk Ditambahkan Di Sini -->
+                    <!-- Gambar Produk Mengikuti Rasio Asli -->
                     <img src="produk.png" alt="Product Quick Review Card" class="card-product-img">
                     
                     <ul>
