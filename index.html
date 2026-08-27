@@ -200,9 +200,9 @@
         }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
         .card {
@@ -241,35 +241,56 @@
             margin-bottom: 12px;
         }
 
-        /* Styling Gambar Produk Berbentuk Persegi Panjang yang Elegan */
-        .card-product-img {
-            width: 100%;
-            height: 190px; /* Tinggi disesuaikan agar sedikit persegi panjang */
-            object-fit: cover; /* Memastikan gambar mengisi area persegi panjang dengan rapi */
-            border-radius: 12px;
-            margin-bottom: 16px;
-            display: block;
+        .card-desc {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
         .card ul {
             list-style: none;
-            margin: 8px 0 24px;
-            flex: 1;
+            margin: 0 0 20px;
         }
         .card ul li {
-            padding: 6px 0;
+            padding: 5px 0;
             display: flex;
             align-items: flex-start;
             gap: 10px;
             color: #d1d5db;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
         .card ul li i {
             color: #3b82f6;
-            width: 20px;
-            font-size: 0.9rem;
+            width: 18px;
+            font-size: 0.85rem;
             margin-top: 4px;
         }
+
+        .card-target {
+            background: #11161d;
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            border: 1px solid #212a38;
+            flex: 1;
+        }
+        .card-target strong {
+            color: #e8edf2;
+            display: block;
+            margin-bottom: 4px;
+        }
+
         .card .price {
             font-size: 2rem;
             font-weight: 700;
@@ -517,39 +538,54 @@
             </div>
 
             <div class="cards-grid">
-                <!-- Paket 1 (Product Quick Review Card) -->
+                <!-- Produk 1 — Akses Reseller -->
                 <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <h3>Product Quick Review Card</h3>
-                    <!-- Gambar Produk Berbentuk Persegi Panjang -->
-                    <img src="produk.png" alt="Product Quick Review Card" class="card-product-img">
+                    <h3>Produk 1 — Akses Reseller</h3>
+                    <p class="card-desc">Dapatkan akses menjadi reseller Quick Review dan beli produk dengan harga khusus mulai Rp20.000/pcs. Cocok buat kamu yang sudah punya cara jualan sendiri dan hanya membutuhkan akses supplier dengan harga reseller.</p>
                     
+                    <div class="card-section-title">Benefit:</div>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Pelanggan tinggal tap NFC atau scan QR.</li>
-                        <li><i class="fas fa-check-circle"></i> Kelola feedback pelanggan secara lebih privat.</li>
-                        <li><i class="fas fa-check-circle"></i> Pantau aktivitas review dari satu tempat.</li>
-                        <li><i class="fas fa-check-circle"></i> Hubungkan beberapa kartu ke satu dashboard.</li>
-                        <li><i class="fas fa-check-circle"></i> Aktivasi mudah dengan panduan lengkap.</li>
-                        <li><i class="fas fa-check-circle"></i> Sekali beli tanpa biaya langganan bulanan.</li>
+                        <li><i class="fas fa-check-circle"></i> Akses Supplier mulai Rp20.000/pcs</li>
+                        <li><i class="fas fa-check-circle"></i> Tanpa Minimum Order</li>
+                        <li><i class="fas fa-check-circle"></i> Akses program reseller</li>
+                        <li><i class="fas fa-check-circle"></i> Bisa menjual kembali produk Quick Review</li>
+                        <li><i class="fas fa-check-circle"></i> Lifetime access</li>
                     </ul>
+
+                    <div class="card-target">
+                        <strong>Cocok untuk:</strong>
+                        Orang yang sudah punya pengalaman jualan dan hanya membutuhkan produk + harga reseller.
+                    </div>
+
                     <div class="price">
-                        Rp60.000
+                        Rp69.000
                         <small>Sekali bayar. Akses instan</small>
                     </div>
                     <a href="#" class="btn-primary">Pilih Paket Ini</a>
                 </div>
 
-                <!-- Paket 2 (Popular) -->
+                <!-- Produk 2 — Panduan Lengkap A–Z (Popular) -->
                 <div class="card popular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <span class="badge-popular">Paling Popular</span>
-                    <h3>Panduan Lengkap A–Z</h3>
+                    <h3>Produk 2 — Panduan Lengkap A–Z</h3>
+                    <p class="card-desc">Bukan cuma mendapatkan akses reseller, kamu juga mendapatkan panduan lengkap untuk memulai bisnis Quick Review dari nol. Mulai dari mendapatkan produk, mencari client, melakukan penawaran, sampai mengembangkan bisnis.</p>
+                    
+                    <div class="card-section-title">Benefit:</div>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Akses Supplier Termurah Cuma Rp20.000</li>
+                        <li><i class="fas fa-check-circle"></i> Akses Supplier mulai Rp20.000/pcs</li>
                         <li><i class="fas fa-check-circle"></i> Tanpa Minimum Order</li>
                         <li><i class="fas fa-check-circle"></i> Panduan Aktivasi Kartu</li>
                         <li><i class="fas fa-check-circle"></i> Cara Cari Client</li>
                         <li><i class="fas fa-check-circle"></i> Cara Handle Client</li>
                         <li><i class="fas fa-check-circle"></i> Cara Scale Bisnisnya</li>
+                        <li><i class="fas fa-check-circle"></i> Lifetime access</li>
                     </ul>
+
+                    <div class="card-target">
+                        <strong>Cocok untuk:</strong>
+                        Pemula yang belum tahu harus mulai dari mana dan ingin mendapatkan panduan lengkap dari awal sampai bisnis mulai berkembang.
+                    </div>
+
                     <div class="price">
                         Rp149.000
                         <small>Sekali bayar. Akses instan</small>
@@ -648,7 +684,7 @@
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
-                        Paket pertama dapat akses supplier dan panduan aktivasi. Paket kedua dapat semua itu plus panduan cari client, handle client, dan cara scale bisnis.
+                        Paket pertama dapat akses reseller dan supplier. Paket kedua dapat semua itu plus panduan lengkap dari nol (cari client, handle client, sampai scale bisnis).
                     </div>
                 </div>
                 <!-- item 6 -->
