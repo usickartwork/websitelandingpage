@@ -97,11 +97,12 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             color: #ffffff;
+            white-space: nowrap; /* Mencegah teks terpotong */
         }
 
         .logo span {
@@ -110,6 +111,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+            margin-left: -4px; /* Merapatkan jarak teks Quick dan Review */
         }
 
         .logo-img {
@@ -508,7 +510,7 @@
         <div class="container nav-container">
             <div class="logo" data-aos="fade-down" data-aos-duration="800">
                 <img src="logo.png" alt="Logo Quick Review" class="logo-img">
-                Quick <span>Review</span>
+                Quick<span>Review</span>
             </div>
 
             <div class="nav-toggle" id="navToggle">
@@ -762,10 +764,11 @@
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-        // Inisialisasi Library Animasi AOS
+        // Inisialisasi Library Animasi AOS dengan mirror: true agar animasi berulang saat scroll ke atas/bawah
         AOS.init({
-            once: true,
-            offset: 100,
+            once: false,
+            mirror: true,
+            offset: 80,
         });
 
         // ----- Mobile nav toggle -----
