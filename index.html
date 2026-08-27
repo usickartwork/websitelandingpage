@@ -49,6 +49,7 @@
             cursor: pointer;
             transition: background 0.2s, transform 0.1s;
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+            text-align: center;
         }
         .btn-primary:hover {
             background: #2563eb;
@@ -108,7 +109,6 @@
             background-clip: text;
         }
 
-        /* Styling untuk Logo Gambar (Ukuran Diperbesar) */
         .logo-img {
             width: 46px;
             height: 46px;
@@ -141,7 +141,6 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile nav toggle */
         .nav-toggle {
             display: none;
             font-size: 1.5rem;
@@ -200,20 +199,20 @@
         }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
             max-width: 950px;
             margin: 0 auto;
         }
         .card {
-            background: #181e26;
+            background: #141922;
             border-radius: 24px;
-            padding: 32px 24px;
             border: 1px solid #2a3340;
             transition: transform 0.2s, border-color 0.2s;
             position: relative;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
         .card:hover {
             transform: translateY(-6px);
@@ -225,7 +224,7 @@
         }
         .badge-popular {
             position: absolute;
-            top: -12px;
+            top: 16px;
             right: 20px;
             background: #3b82f6;
             color: #0b0e11;
@@ -235,20 +234,30 @@
             border-radius: 20px;
             letter-spacing: 0.3px;
             text-transform: uppercase;
-        }
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
+            z-index: 10;
         }
 
-        /* Styling Gambar Produk Persegi Panjang */
-        .card-product-img {
+        /* Bagian Banner/Gambar Produk di Atas */
+        .card-banner {
             width: 100%;
-            height: 190px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 16px;
             display: block;
+            border-bottom: 1px solid #2a3340;
+        }
+
+        /* Bagian Konten di Bawah Card */
+        .card-body {
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #ffffff;
         }
 
         .card-desc {
@@ -258,7 +267,7 @@
         }
 
         .card-section-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: #3b82f6;
             text-transform: uppercase;
@@ -268,11 +277,11 @@
 
         .card ul {
             list-style: none;
-            margin: 0 0 20px;
+            margin: 0 0 24px;
             flex: 1;
         }
         .card ul li {
-            padding: 5px 0;
+            padding: 6px 0;
             display: flex;
             align-items: flex-start;
             gap: 10px;
@@ -286,22 +295,24 @@
             margin-top: 4px;
         }
 
+        .card .price-area {
+            margin-top: auto;
+            margin-bottom: 16px;
+        }
         .card .price {
             font-size: 2rem;
             font-weight: 700;
-            margin: 8px 0 4px;
+            color: #3b82f6;
+            margin: 0 0 2px;
         }
         .card .price small {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 400;
             color: #9ca3af;
             display: block;
-            margin-top: 2px;
         }
         .card .btn-primary {
             width: 100%;
-            text-align: center;
-            margin-top: 12px;
         }
 
         /* ----- CARA KERJA (steps) ----- */
@@ -473,9 +484,6 @@
             .steps-grid {
                 grid-template-columns: 1fr;
             }
-            .card {
-                padding: 24px 16px;
-            }
         }
     </style>
 </head>
@@ -535,49 +543,57 @@
             <div class="cards-grid">
                 <!-- Produk 1 -->
                 <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <h3>Akses Reseller</h3>
-                    <img src="produk.png" alt="Akses Reseller" class="card-product-img">
-                    <p class="card-desc">Dapatkan akses menjadi reseller Quick Review dan beli produk dengan harga khusus mulai Rp20.000/pcs. Cocok buat kamu yang sudah punya cara jualan sendiri dan hanya membutuhkan akses supplier dengan harga reseller.</p>
+                    <!-- Banner Gambar di Atas Card -->
+                    <img src="produk.png" alt="Akses Reseller" class="card-banner">
                     
-                    <div class="card-section-title">Benefit:</div>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Akses Supplier mulai Rp20.000/pcs</li>
-                        <li><i class="fas fa-check-circle"></i> Tanpa Minimum Order</li>
-                        <li><i class="fas fa-check-circle"></i> Akses program reseller</li>
-                        <li><i class="fas fa-check-circle"></i> Bisa menjual kembali produk Quick Review</li>
-                        <li><i class="fas fa-check-circle"></i> Lifetime access</li>
-                    </ul>
+                    <div class="card-body">
+                        <h3>Akses Reseller</h3>
+                        <p class="card-desc">Dapatkan akses menjadi reseller Quick Review dan beli produk dengan harga khusus mulai Rp20.000/pcs. Cocok buat kamu yang sudah punya cara jualan sendiri dan hanya membutuhkan akses supplier dengan harga reseller.</p>
+                        
+                        <div class="card-section-title">Benefit:</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Akses Supplier mulai Rp20.000/pcs</li>
+                            <li><i class="fas fa-check"></i> Tanpa Minimum Order</li>
+                            <li><i class="fas fa-check"></i> Akses program reseller</li>
+                            <li><i class="fas fa-check"></i> Bisa menjual kembali produk Quick Review</li>
+                            <li><i class="fas fa-check"></i> Lifetime access</li>
+                        </ul>
 
-                    <div class="price">
-                        Rp69.000
-                        <small>Sekali bayar. Akses instan</small>
+                        <div class="price-area">
+                            <div class="price">Rp69.000</div>
+                            <small>Sekali bayar · Akses instan</small>
+                        </div>
+                        <a href="#" class="btn-primary">Ambil Sekarang</a>
                     </div>
-                    <a href="#" class="btn-primary">Pilih Paket Ini</a>
                 </div>
 
                 <!-- Produk 2 (Popular) -->
                 <div class="card popular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <span class="badge-popular">Paling Popular</span>
-                    <h3>Panduan Lengkap A–Z</h3>
-                    <img src="produk.png" alt="Panduan Lengkap A–Z" class="card-product-img">
-                    <p class="card-desc">Bukan cuma mendapatkan akses reseller, kamu juga mendapatkan panduan lengkap untuk memulai bisnis Quick Review dari nol. Mulai dari mendapatkan produk, mencari client, melakukan penawaran, sampai mengembangkan bisnis.</p>
+                    <!-- Banner Gambar di Atas Card -->
+                    <img src="produk.png" alt="Panduan Lengkap A–Z" class="card-banner">
                     
-                    <div class="card-section-title">Benefit:</div>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Akses Supplier mulai Rp20.000/pcs</li>
-                        <li><i class="fas fa-check-circle"></i> Tanpa Minimum Order</li>
-                        <li><i class="fas fa-check-circle"></i> Panduan Aktivasi Kartu</li>
-                        <li><i class="fas fa-check-circle"></i> Cara Cari Client</li>
-                        <li><i class="fas fa-check-circle"></i> Cara Handle Client</li>
-                        <li><i class="fas fa-check-circle"></i> Cara Scale Bisnisnya</li>
-                        <li><i class="fas fa-check-circle"></i> Lifetime access</li>
-                    </ul>
+                    <div class="card-body">
+                        <h3>Panduan Lengkap A–Z</h3>
+                        <p class="card-desc">Bukan cuma mendapatkan akses reseller, kamu juga mendapatkan panduan lengkap untuk memulai bisnis Quick Review dari nol. Mulai dari mendapatkan produk, mencari client, melakukan penawaran, sampai mengembangkan bisnis.</p>
+                        
+                        <div class="card-section-title">Benefit:</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Akses Supplier mulai Rp20.000/pcs</li>
+                            <li><i class="fas fa-check"></i> Tanpa Minimum Order</li>
+                            <li><i class="fas fa-check"></i> Panduan Aktivasi Kartu</li>
+                            <li><i class="fas fa-check"></i> Cara Cari Client</li>
+                            <li><i class="fas fa-check"></i> Cara Handle Client</li>
+                            <li><i class="fas fa-check"></i> Cara Scale Bisnisnya</li>
+                            <li><i class="fas fa-check"></i> Lifetime access</li>
+                        </ul>
 
-                    <div class="price">
-                        Rp149.000
-                        <small>Sekali bayar. Akses instan</small>
+                        <div class="price-area">
+                            <div class="price">Rp149.000</div>
+                            <small>Sekali bayar · Akses instan</small>
+                        </div>
+                        <a href="#" class="btn-primary">Ambil Sekarang</a>
                     </div>
-                    <a href="#" class="btn-primary">Pilih Paket Ini</a>
                 </div>
             </div>
         </div>
@@ -738,8 +754,8 @@
     <script>
         // Inisialisasi Library Animasi AOS
         AOS.init({
-            once: true, // Animasi hanya berjalan sekali saat discroll ke bawah
-            offset: 100, // Jarak trigger animasi sebelum elemen terlihat
+            once: true,
+            offset: 100,
         });
 
         // ----- Mobile nav toggle -----
@@ -753,7 +769,6 @@
             icon.classList.toggle('fa-times');
         });
 
-        // Close nav on link click (mobile)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('open');
@@ -769,14 +784,12 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
+                const isActive = item.classList.0 ? false : item.classList.contains('active');
 
-                // Close all other items (optional: if you want only one open)
                 faqItems.forEach(other => {
                     if (other !== item) other.classList.remove('active');
                 });
 
-                // Toggle current
                 if (isActive) {
                     item.classList.remove('active');
                 } else {
