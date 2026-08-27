@@ -6,6 +6,8 @@
     <title>Quick Review – Modal 15K Bisa Cuan 10x Lipat</title>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- AOS CSS for Scroll Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
         /* ----- RESET & GLOBAL ----- */
         * {
@@ -20,6 +22,7 @@
             color: #e8edf2;
             line-height: 1.6;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         a {
@@ -137,7 +140,7 @@
 
         /* ----- HERO ----- */
         .hero {
-            padding: 80px 0 60px;
+            padding: 90px 0 70px;
             text-align: center;
         }
         .hero h1 {
@@ -441,7 +444,7 @@
     <!-- ========== NAVIGATION ========== -->
     <nav>
         <div class="container nav-container">
-            <div class="logo">
+            <div class="logo" data-aos="fade-down" data-aos-duration="800">
                 <i class="fas fa-star"></i> Quick Review
             </div>
 
@@ -456,7 +459,7 @@
                 <a href="#affiliate">Affiliate</a>
             </div>
 
-            <div class="nav-cta">
+            <div class="nav-cta" data-aos="fade-down" data-aos-duration="800">
                 <a href="#produk" class="btn-primary">Cek Paketnya</a>
             </div>
         </div>
@@ -465,15 +468,15 @@
     <!-- ========== HERO ========== -->
     <section class="hero">
         <div class="container">
-            <h1>
+            <h1 data-aos="fade-up" data-aos-duration="1000">
                 Modal <span>Rp15.000</span><br />
                 Bisa Cuan <span>10x Lipat</span>
             </h1>
-            <p>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 Cara gampang ubah kartu review Google jadi Rp50–165 ribu ke bisnis lokal di sekitar kamu.
                 Nggak perlu followers, nggak perlu modal gede, nggak perlu jago jualan.
             </p>
-            <div class="btn-group">
+            <div class="btn-group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <a href="#produk" class="btn-primary">Dapetin Aksesnya</a>
                 <a href="#cara-kerja" class="btn-outline">Lihat Cara Kerjanya</a>
             </div>
@@ -483,14 +486,14 @@
     <!-- ========== PRODUK ========== -->
     <section class="produk" id="produk">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
                 <h2>Pilih Paket Yang Cocok Buat Kamu</h2>
                 <p>Dua pilihan, tinggal sesuai keuntungan kamu berikutnya.</p>
             </div>
 
             <div class="cards-grid">
                 <!-- Paket 1 -->
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <h3>Akses Supplier Eksklusif</h3>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Akses Supplier Termurah Cuma Rp15.000</li>
@@ -505,7 +508,7 @@
                 </div>
 
                 <!-- Paket 2 (Popular) -->
-                <div class="card popular">
+                <div class="card popular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <span class="badge-popular">Paling Popular</span>
                     <h3>Panduan Lengkap A–Z</h3>
                     <ul>
@@ -529,28 +532,28 @@
     <!-- ========== CARA KERJA ========== -->
     <section class="cara-kerja" id="cara-kerja">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
                 <h2>4 Langkah Dari Nol Sampai Closing Pertama</h2>
                 <p>Cuma 4 langkah ini yang perlu kamu ulang-ulang.</p>
             </div>
 
             <div class="steps-grid">
-                <div class="step">
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="step-number">1</div>
                     <h4>Pesan Kartu NFC-nya</h4>
                     <p>Cuma Rp15.000/pcs, langsung dari supplier yang sudah termasuk di paket kamu.</p>
                 </div>
-                <div class="step">
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="step-number">2</div>
                     <h4>Samperin Bisnis Lokal</h4>
                     <p>Resto, salon, barbershop, kafe — bisnis yang butuh review Google biar makin dipercaya orang.</p>
                 </div>
-                <div class="step">
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div class="step-number">3</div>
                     <h4>Closing di Tempat</h4>
                     <p>Pakai script obrolan dari panduan, Rp50–165 ribu per kartu tergantung bisnisnya.</p>
                 </div>
-                <div class="step">
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <div class="step-number">4</div>
                     <h4>Ulangi & Scale</h4>
                     <p>Satu bisnis puas, kamu akan lebih gampang direkomendasikan ke bisnis lain di sekitarnya.</p>
@@ -562,11 +565,11 @@
     <!-- ========== FAQ ========== -->
     <section class="faq" id="faq">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
                 <h2>Pertanyaan yang Sering Ditanyain</h2>
             </div>
 
-            <div class="faq-list" id="faqList">
+            <div class="faq-list" id="faqList" data-aos="fade-up" data-aos-duration="800">
                 <!-- item 1 -->
                 <div class="faq-item">
                     <div class="faq-question">
@@ -674,8 +677,17 @@
         </div>
     </footer>
 
+    <!-- AOS JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <!-- ========== JAVASCRIPT ========== -->
     <script>
+        // Inisialisasi Library Animasi AOS
+        AOS.init({
+            once: true, // Animasi hanya berjalan sekali saat discroll ke bawah
+            offset: 100, // Jarak trigger animasi sebelum elemen terlihat
+        });
+
         // ----- Mobile nav toggle -----
         const toggleBtn = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
