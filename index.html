@@ -543,7 +543,6 @@
             <div class="cards-grid">
                 <!-- Produk 1 -->
                 <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <!-- Banner Gambar di Atas Card -->
                     <img src="produk.png" alt="Akses Reseller" class="card-banner">
                     
                     <div class="card-body">
@@ -570,7 +569,6 @@
                 <!-- Produk 2 (Popular) -->
                 <div class="card popular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <span class="badge-popular">Paling Popular</span>
-                    <!-- Banner Gambar di Atas Card -->
                     <img src="produk.png" alt="Panduan Lengkap A–Z" class="card-banner">
                     
                     <div class="card-body">
@@ -784,7 +782,7 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                const isActive = item.classList.0 ? false : item.classList.contains('active');
+                const isActive = item.classList.contains('active');
 
                 faqItems.forEach(other => {
                     if (other !== item) other.classList.remove('active');
