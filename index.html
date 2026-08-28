@@ -246,14 +246,15 @@
             box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
         }
 
-        /* Bagian Banner/Gambar Produk */
+        /* Diubah dari cover menjadi contain agar gambar tampil utuh/full tidak terpotong */
         .card-banner {
             width: 100%;
             height: 360px;
-            object-fit: cover;
+            object-fit: contain;
             background: #0b0e11;
             display: block;
             border-bottom: 1px solid #2a3340;
+            padding: 10px;
         }
 
         /* Bagian Konten di Bawah Card */
