@@ -214,4 +214,600 @@
             border: 1px solid #2a3340;
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
             position: relative;
-            display: flex
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+        }
+        .card.popular {
+            border-color: #3b82f6;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.25), 0 12px 30px rgba(59, 130, 246, 0.1);
+        }
+        .card.popular:hover {
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.4), 0 15px 35px rgba(59, 130, 246, 0.2);
+        }
+        .badge-popular {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: #3b82f6;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 4px 16px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            z-index: 10;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+        }
+
+        /* Bagian Banner/Gambar Produk */
+        .card-banner {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            background: #0b0e11;
+            display: block;
+            border-bottom: 1px solid #2a3340;
+        }
+
+        /* Bagian Konten di Bawah Card */
+        .card-body {
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .card-section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        .card ul {
+            list-style: none;
+            margin: 0 0 24px;
+            flex: 1;
+        }
+        .card ul li {
+            padding: 6px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #d1d5db;
+            font-size: 0.92rem;
+        }
+        .card ul li i {
+            color: #3b82f6;
+            width: 18px;
+            font-size: 0.85rem;
+            margin-top: 4px;
+            filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6));
+        }
+
+        .card .price-area {
+            margin-top: auto;
+            margin-bottom: 16px;
+        }
+        .card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin: 0 0 2px;
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        .card .price small {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #9ca3af;
+            display: block;
+        }
+        .card .btn-primary {
+            width: 100%;
+        }
+
+        /* ----- CARA KERJA (steps) ----- */
+        .cara-kerja {
+            padding: 60px 0;
+            background: #0f141a;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .step {
+            text-align: center;
+            padding: 20px 12px;
+        }
+        .step .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #3b82f6;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+        .step h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .step p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        /* ----- FAQ (accordion) ----- */
+        .faq {
+            padding: 60px 0;
+        }
+        .faq-list {
+            max-width: 740px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .faq-item {
+            background: #181e26;
+            border-radius: 16px;
+            border: 1px solid #2a3340;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .faq-item:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+            user-select: none;
+        }
+        .faq-question:hover {
+            background: #1f2937;
+        }
+        .faq-question i {
+            font-size: 1.2rem;
+            transition: transform 0.25s;
+            color: #9ca3af;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+            color: #3b82f6;
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8));
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: #d1d5db;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 24px 20px;
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            border-top: 1px solid #1f2937;
+            padding: 32px 0;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        footer .socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 12px;
+        }
+        footer .socials a {
+            color: #9ca3af;
+            font-size: 1.3rem;
+            transition: all 0.2s;
+        }
+        footer .socials a:hover {
+            color: #3b82f6;
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.8));
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                padding-top: 16px;
+                border-top: 1px solid #1f2937;
+                margin-top: 12px;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-cta .btn-primary {
+                display: none;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 460px;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .btn-primary,
+            .btn-outline {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                width: 100%;
+                text-align: center;
+            }
+            .hero .btn-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo" data-aos="fade-up" data-aos-duration="800">
+                <img src="logo.png" alt="Logo QuickReview" class="logo-img">
+                Quick<span>Review</span>
+            </div>
+
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#produk">Produk</a>
+                <a href="#cara-kerja">Cara Kerja</a>
+                <a href="#faq">FAQ</a>
+                <a href="#affiliate">Affiliate</a>
+            </div>
+
+            <div class="nav-cta" data-aos="fade-up" data-aos-duration="800">
+                <a href="#produk" class="btn-primary">Cek Paketnya</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 data-aos="fade-up" data-aos-duration="1000">
+                Modal <span>Rp20.000</span><br />
+                Bisa Cuan <span>10x Lipat</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                Cara gampang ubah kartu review Google jadi Rp50–165 ribu ke bisnis lokal di sekitar kamu.
+                Nggak perlu followers, nggak perlu modal gede, nggak perlu jago jualan.
+            </p>
+            <div class="btn-group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <a href="#produk" class="btn-primary">Dapetin Aksesnya</a>
+                <a href="#cara-kerja" class="btn-outline">Lihat Cara Kerjanya</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="produk" id="produk">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+                <h2>Pilih Paket Yang Cocok Buat Kamu</h2>
+                <p>Dua pilihan, tinggal sesuai keuntungan kamu berikutnya.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <img src="produk.png" alt="Akses Reseller" class="card-banner">
+                    
+                    <div class="card-body">
+                        <h3>Akses Reseller</h3>
+                        
+                        <div class="card-section-title">Benefit:</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Akses Supplier mulai Rp20.000/pcs</li>
+                            <li><i class="fas fa-check"></i> Tanpa Minimum Order</li>
+                            <li><i class="fas fa-check"></i> Akses program reseller</li>
+                            <li><i class="fas fa-check"></i> Bisa menjual kembali produk QuickReview</li>
+                            <li><i class="fas fa-check"></i> Lifetime access</li>
+                        </ul>
+
+                        <div class="price-area">
+                            <div class="price">Rp69.000</div>
+                            <small>Sekali bayar · Akses instan</small>
+                        </div>
+                        <a href="https://googlereviewv4.vercel.app/?id=NFC-001" target="_blank" class="btn-primary">Ambil Sekarang</a>
+                    </div>
+                </div>
+
+                <div class="card popular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <span class="badge-popular">Paling Popular</span>
+                    <img src="produk2.png" alt="Panduan Lengkap A–Z" class="card-banner">
+                    
+                    <div class="card-body">
+                        <h3>Panduan Lengkap A–Z</h3>
+                        
+                        <div class="card-section-title">Benefit:</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Akses Supplier mulai Rp20.000/pcs</li>
+                            <li><i class="fas fa-check"></i> Tanpa Minimum Order</li>
+                            <li><i class="fas fa-check"></i> Panduan Aktivasi Kartu</li>
+                            <li><i class="fas fa-check"></i> Cara Cari Client</li>
+                            <li><i class="fas fa-check"></i> Cara Handle Client</li>
+                            <li><i class="fas fa-check"></i> Cara Scale Bisnisnya</li>
+                            <li><i class="fas fa-check"></i> Lifetime access</li>
+                        </ul>
+
+                        <div class="price-area">
+                            <div class="price">Rp149.000</div>
+                            <small>Sekali bayar · Akses instan</small>
+                        </div>
+                        <a href="#" class="btn-primary">Ambil Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cara-kerja" id="cara-kerja">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+                <h2>4 Langkah Dari Nol Sampai Closing Pertama</h2>
+                <p>Cuma 4 langkah ini yang perlu kamu ulang-ulang.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <h4>Pesan Kartu NFC-nya</h4>
+                    <p>Cuma Rp20.000/pcs, langsung dari supplier yang sudah termasuk di paket kamu.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <h4>Samperin Bisnis Lokal</h4>
+                    <p>Resto, salon, barbershop, kafe — bisnis yang butuh review Google biar makin dipercaya orang.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <h4>Closing di Tempat</h4>
+                    <p>Pakai script obrolan dari panduan, Rp50–165 ribu per kartu tergantung bisnisnya.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <h4>Ulangi & Scale</h4>
+                    <p>Satu bisnis puas, kamu akan lebih gampang direkomendasikan ke bisnis lain di sekitarnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+                <h2>Pertanyaan yang Sering Ditanyain</h2>
+            </div>
+
+            <div class="faq-list" id="faqList" data-aos="fade-up" data-aos-duration="800">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Aku butuh followers atau modal gede nggak?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Nggak sama sekali. Ini bisnis offline-to-online, fokus ke bisnis lokal. Nggak perlu followers, nggak perlu modal besar.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa modal awal yang aku butuhin?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Cukup Rp20.000 untuk beli kartu NFC pertama + biaya paket akses mulai Rp69.000. Total awal bisa di bawah Rp100.000.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa banyak cuan yang bisa aku dapat sebenarnya?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Rata-rata Rp50–165 ribu per kartu dari satu bisnis. Kalau kamu keliling 5 bisnis sehari, potensi cuan 10x lipat dari modal sangat realistis.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Beneran bisa cuan sampai 10x lipat dari modal?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Iya. Dengan modal Rp20.000 per kartu, satu closing minimal Rp50.000 sudah 2.5x lipat. Kalau closing Rp165.000, itu 8x lipat lebih. Ulangi berkali-kali.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bedanya dua paket ini apa?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Paket pertama dapat akses reseller dan supplier. Paket kedua dapat semua itu plus panduan lengkap dari nol (cari client, handle client, sampai scale bisnis).
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Kapan aku dapat akses setelah bayar?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Akses instan. Setelah pembayaran berhasil, kamu langsung dapat link akses ke panduan dan supplier di email/WhatsApp.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Ini bisa dijalani di luar kota besar juga?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sangat bisa. Justru di kota kecil persaingan lebih sedikit dan bisnis lokal sangat antusias dengan review Google.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Kartu NFC/QR-nya cara kerjanya gimana?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Kartu NFC bisa ditempel ke HP pelanggan untuk langsung membuka halaman review Google bisnis tersebut. Praktis, cepat, dan meningkatkan rating bisnis.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Metode pembayarannya apa aja?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Kami menerima transfer bank (BCA, Mandiri, BNI), QRIS, dan e-wallet (OVO, DANA, GoPay).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="affiliate">
+        <div class="container">
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 QuickReview. Affiliate &amp; partner resmi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        // Memaksa posisi scroll kembali ke atas saat halaman di-refresh/dimuat ulang
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        // Inisialisasi AOS standar (sekali muncul saat digulir ke bawah)
+        AOS.init({
+            once: true,
+            offset: 80,
+        });
+
+        // ----- Mobile nav toggle -----
+        const toggleBtn = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const icon = toggleBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                const icon = toggleBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // ----- FAQ Accordion -----
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                faqItems.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
