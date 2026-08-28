@@ -182,30 +182,6 @@
             gap: 16px;
         }
 
-        /* ----- COUNTDOWN TIMER STYLING ----- */
-        .countdown-box {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            padding: 8px 20px;
-            border-radius: 30px;
-            margin-bottom: 24px;
-            font-size: 0.95rem;
-            color: #60a5fa;
-            font-weight: 600;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
-        }
-        .countdown-box i {
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-
         /* ----- SECTION TITLE ----- */
         .section-title {
             text-align: center;
@@ -353,6 +329,27 @@
             color: #9ca3af;
             display: block;
         }
+
+        /* Countdown merah di bawah harga produk 2 */
+        .card-countdown {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #ef4444;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+        }
+        .card-countdown i {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
         .card .btn-primary {
             width: 100%;
         }
@@ -564,10 +561,6 @@
 
     <section class="hero">
         <div class="container">
-            <div class="countdown-box" data-aos="fade-up" data-aos-duration="1000">
-                <i class="fas fa-clock"></i> Diskon Spesial Berakhir Dalam: <strong id="countdown" style="margin-left: 6px; font-size: 1.05rem;">58:00</strong>
-            </div>
-
             <h1 data-aos="fade-up" data-aos-duration="1000">
                 Modal <span>Rp20.000</span><br />
                 Bisa Cuan <span>10x Lipat</span>
@@ -639,6 +632,11 @@
                             </div>
                             <small>Sekali bayar · Akses instan</small>
                         </div>
+
+                        <div class="card-countdown">
+                            <i class="fas fa-clock"></i> Berakhir dalam: <span id="countdown">58:00</span>
+                        </div>
+
                         <a href="#" class="btn-primary">Ambil Sekarang</a>
                     </div>
                 </div>
@@ -797,11 +795,10 @@
             offset: 80,
         });
 
-        // ----- Countdown Timer (58 Menit & Auto Reset) -----
+        // ----- Countdown Timer (58 Menit & Auto Reset) di bawah harga produk 2 -----
         function startCountdown() {
             let totalSeconds = 58 * 60; // 58 menit dalam detik
 
-            // Cek apakah sudah ada penyimpanan waktu di localStorage agar timer tetap konsisten saat berpindah halaman/refresh browser
             const savedTime = localStorage.getItem('discount_timer');
             if (savedTime && savedTime > 0) {
                 totalSeconds = parseInt(savedTime);
@@ -813,25 +810,23 @@
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = totalSeconds % 60;
 
-                // Format agar selalu 2 digit (contoh: 08:05)
                 let formattedMinutes = String(minutes).padStart(2, '0');
                 let formattedSeconds = String(seconds).padStart(2, '0');
 
-                timerDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
+                if (timerDisplay) {
+                    timerDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
+                }
 
-                // Simpan sisa waktu ke localStorage
                 localStorage.setItem('discount_timer', totalSeconds);
 
                 totalSeconds--;
 
-                // Jika waktu habis (mencapai 0), reset kembali ke 58 menit
                 if (totalSeconds < 0) {
                     totalSeconds = 58 * 60;
                 }
             }, 1000);
         }
 
-        // Jalankan fungsi countdown saat halaman dimuat
         startCountdown();
 
         // ----- Mobile nav toggle -----
