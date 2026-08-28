@@ -233,7 +233,7 @@
         .badge-popular {
             position: absolute;
             top: 16px;
-            left: 20px; /* Diubah dari right ke left */
+            left: 20px;
             background: #3b82f6;
             color: #ffffff;
             font-weight: 700;
@@ -311,6 +311,17 @@
             color: #3b82f6;
             margin: 0 0 2px;
             text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .card .old-price {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #9ca3af;
+            text-decoration: line-through;
+            text-shadow: none;
         }
         .card .price small {
             font-size: 0.85rem;
@@ -594,7 +605,10 @@
                         </ul>
 
                         <div class="price-area">
-                            <div class="price">Rp149.000</div>
+                            <div class="price">
+                                Rp129.000 
+                                <span class="old-price">Rp359.000</span>
+                            </div>
                             <small>Sekali bayar · Akses instan</small>
                         </div>
                         <a href="#" class="btn-primary">Ambil Sekarang</a>
