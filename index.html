@@ -176,7 +176,7 @@
             color: #9ca3af;
         }
 
-        /* Style Banner Hero Besar, Transparan, Tanpa Frame, & Lebih Rapat */
+        /* Style Banner Hero & Animasi Naik-Turun (Floating Effect) */
         .hero-banner-container {
             max-width: 1050px;
             margin: 0 auto 16px;
@@ -184,7 +184,21 @@
             border: none;
             box-shadow: none;
             padding: 0;
+            animation: floatAnimation 4s ease-in-out infinite;
         }
+
+        @keyframes floatAnimation {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px); /* Mengambang ke atas sejauh 12 piksel */
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
         .hero-banner {
             width: 100%;
             max-height: 600px;
@@ -222,7 +236,7 @@
         }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 Kolom untuk 3 Produk */
+            grid-template-columns: repeat(3, 1fr);
             gap: 28px;
             max-width: 1200px;
             margin: 0 auto;
