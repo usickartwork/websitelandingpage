@@ -176,21 +176,22 @@
             color: #9ca3af;
         }
 
-        /* Style untuk Banner Besar di Hero */
+        /* Style untuk Banner Besar di Hero (Tanpa Frame & Transparan) */
         .hero-banner-container {
             max-width: 800px;
             margin: 0 auto 36px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #2a3340;
-            background: #141922;
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
         }
         .hero-banner {
             width: 100%;
             max-height: 450px;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
+            background: transparent;
+            border: none;
         }
 
         .hero .btn-group {
