@@ -153,7 +153,7 @@
 
         /* ----- HERO ----- */
         .hero {
-            padding: 90px 0 70px;
+            padding: 70px 0 70px;
             text-align: center;
         }
         .hero h1 {
@@ -175,6 +175,24 @@
             font-size: 1.15rem;
             color: #9ca3af;
         }
+
+        /* Style untuk Banner Besar di Hero */
+        .hero-banner-container {
+            max-width: 800px;
+            margin: 0 auto 36px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #2a3340;
+            background: #141922;
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+        }
+        .hero-banner {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
         .hero .btn-group {
             display: flex;
             flex-wrap: wrap;
@@ -569,6 +587,11 @@
                 Cara gampang ubah kartu review Google jadi Rp50–165 ribu ke bisnis lokal di sekitar kamu.
                 Nggak perlu followers, nggak perlu modal gede, nggak perlu jago jualan.
             </p>
+
+            <div class="hero-banner-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img src="hero-produk.png" alt="Banner Produk QuickReview" class="hero-banner">
+            </div>
+
             <div class="btn-group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <a href="#produk" class="btn-primary">Dapetin Aksesnya</a>
                 <a href="#cara-kerja" class="btn-outline">Lihat Cara Kerjanya</a>
