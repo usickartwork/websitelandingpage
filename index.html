@@ -124,6 +124,7 @@
             gap: 28px;
             font-weight: 500;
             font-size: 0.95rem;
+            align-items: center;
         }
         .nav-links a {
             padding: 6px 0;
@@ -132,6 +133,61 @@
         }
         .nav-links a:hover {
             border-bottom-color: #3b82f6;
+        }
+
+        /* Dropdown Contact Us */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background: none;
+            border: none;
+            color: #e8edf2;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .dropbtn:hover {
+            border-bottom-color: #3b82f6;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #141922;
+            min-width: 180px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+            border: 1px solid #2a3340;
+            border-radius: 12px;
+            z-index: 1;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .dropdown-content a {
+            color: #e8edf2;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            border-bottom: none;
+            transition: background 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #1f2937;
+            color: #3b82f6;
+        }
+        .dropdown.active .dropdown-content {
+            display: block;
         }
 
         .nav-cta {
@@ -149,6 +205,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #e8edf2;
+            margin-left: auto; /* Pindah ke pojok kanan atas */
         }
 
         /* ----- HERO ----- */
@@ -526,10 +583,12 @@
                 width: 100%;
                 flex-direction: column;
                 align-items: center;
-                gap: 12px;
-                padding-top: 16px;
+                gap: 16px;
+                padding: 20px 0;
                 border-top: 1px solid #1f2937;
                 margin-top: 12px;
+                background: rgba(11, 14, 17, 0.98);
+                border-radius: 0 0 16px 16px;
             }
             .nav-links.open {
                 display: flex;
@@ -542,6 +601,13 @@
             }
             .steps-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .dropdown-content {
+                position: relative;
+                box-shadow: none;
+                border: none;
+                background: #0f141a;
+                margin-top: 8px;
             }
         }
 
@@ -587,6 +653,13 @@
                 <a href="#cara-kerja">Cara Kerja</a>
                 <a href="#faq">FAQ</a>
                 <a href="#affiliate">Affiliate</a>
+                <div class="dropdown" id="contactDropdown">
+                    <button class="dropbtn" id="dropBtn">Contact Us <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                    <div class="dropdown-content">
+                        <a href="https://wa.me/message/34M7UAQ42TAYI1" target="_blank"><i class="fab fa-whatsapp" style="color: #25d366; font-size: 1.1rem;"></i> WhatsApp</a>
+                        <a href="https://www.instagram.com/googlereview.id?igsi=MWJjY3VodzByYmh1cA==" target="_blank"><i class="fab fa-instagram" style="color: #e1306c; font-size: 1.1rem;"></i> Instagram</a>
+                    </div>
+                </div>
             </div>
 
             <div class="nav-cta" data-aos="fade-up" data-aos-duration="800">
@@ -842,10 +915,8 @@
     <footer id="affiliate">
         <div class="container">
             <div class="socials">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/googlereview.id?igsi=MWJjY3VodzByYmh1cA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/message/34M7UAQ42TAYI1" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
             <p>&copy; 2026 QuickReview. Affiliate &amp; partner resmi.</p>
         </div>
@@ -900,18 +971,37 @@
 
         startCountdown();
 
-        // ----- Mobile nav toggle -----
+        // ----- Mobile nav toggle (3 Baris Hamburger di pojok kanan atas) -----
         const toggleBtn = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
 
-        toggleBtn.addEventListener('click', () => {
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             navLinks.classList.toggle('open');
             const icon = toggleBtn.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // ----- Dropdown Contact Us Mobile / Desktop Toggle -----
+        const dropdown = document.getElementById('contactDropdown');
+        const dropBtn = document.getElementById('dropBtn');
+
+        dropBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+
+        // Close menu and dropdown when clicking outside
+        document.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            const icon = toggleBtn.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+            dropdown.classList.remove('active');
+        });
+
+        document.querySelectorAll('.nav-links a:not(.dropbtn)').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('open');
                 const icon = toggleBtn.querySelector('i');
